@@ -27,6 +27,11 @@ class User extends Authenticatable
         'is_active',
     ];
 
+    public function isAdmin()
+    {   
+        return $this->role === 'admin'; 
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

@@ -38,7 +38,7 @@ class AuthController extends Controller
         if ($this->userService->login($username_email, $password, $remember)) {
             return redirect()->intended('/home');
         } else {
-            return redirect()->route('login')->with('error', 'Username_Email atau password salah.')->withInput($request->except('password'));
+            return redirect()->route('login')->with('error', 'Login gagal. Mohon periksa kembali username, password, atau status akun Anda.')->withInput($request->except('password'));
         }
 
     }

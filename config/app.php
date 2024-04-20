@@ -169,6 +169,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\UserServiceProvider::class,
+        App\Providers\KriteriaServiceProvider::class,
+        App\Providers\MahasiswaServiceProvider::class,
+        App\Providers\GenerateServiceProvider::class,
+        App\Providers\UsersServiceProvider::class,
+        App\Providers\ProfileServiceProvider::class,
     ])->toArray(),
 
     /*

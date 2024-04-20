@@ -9,13 +9,19 @@ use Illuminate\Database\Eloquent\Model;
 class HasilPreferensiMahasiswaTopsis extends Model
 {
     protected $table = "hasil_preferensi_mahasiswa_topsis";
+    public $timestamps = false; 
+
+    protected $fillable = [
+        'mahasiswa_id',
+        'preferensi'
+    ];
 
     public function mahasiswa(): HasOne
     {
         return $this->hasOne(
             Mahasiswa::class, 
-            "mahasiswa_id", // FK on hasil_preferensi_mahasiswa_topsis table
-            "id" // PK on mahasiswa table
+            "id", // PK on mahasiswa table
+            "mahasiswa_id" // FK on hasil_preferensi_mahasiswa_topsis table
         );
     }
 }

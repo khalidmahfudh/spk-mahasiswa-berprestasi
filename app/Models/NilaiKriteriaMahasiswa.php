@@ -9,6 +9,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class NilaiKriteriaMahasiswa extends Model
 {
     protected $table = "nilai_kriteria_mahasiswa";
+    public $timestamps = false; 
+
+    protected $fillable = [
+        'mahasiswa_id',
+        'kriteria_id',
+        'nilai'
+    ];
 
     public function mahasiswa(): BelongsTo
     {

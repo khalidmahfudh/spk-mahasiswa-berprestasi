@@ -28,11 +28,11 @@ class LoginRequest extends FormRequest
     }
 
     public function attributes()
-{
-    return [
-        'username_email' => 'Email atau Username'
-    ];
-}
+    {
+        return [
+            'username_email' => 'Email atau Username'
+        ];
+    }
 
     public function messages(): array
     {

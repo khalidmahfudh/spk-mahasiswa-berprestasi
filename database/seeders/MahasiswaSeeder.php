@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+use App\Models\Mahasiswa;
 class MahasiswaSeeder extends Seeder
 {
     /**
@@ -12,6 +12,11 @@ class MahasiswaSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $mahasiswa = new Mahasiswa();
+        $mahasiswa->id = 1;
+        $mahasiswa->nama_mahasiswa = "khalid mahfudz";
+        $mahasiswa->nim = "150504044";
+        $mahasiswa->save();
+
     }
 }

@@ -11,6 +11,14 @@ class Kriteria extends Model
 {
     protected $table = "kriteria";
 
+    protected $fillable = [
+        'kode_kriteria',
+        'nama_kriteria',
+        'bilangan',
+        'min_nilai',
+        'max_nilai'
+    ];
+
     public function nilai_kriteria_mahasiswa(): HasMany
     {
         return $this->hasMany(

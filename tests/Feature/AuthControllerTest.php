@@ -19,7 +19,7 @@ class AuthControllerTest extends TestCase
     public function testLoginSuccess()
     {
         $this->post('/login', [
-            "username_email" => "khalidmahfudh",
+            "username_email" => "admin",
             "password" => "rahasia"
         ])->assertRedirect("/home");
         $this->assertTrue(Auth::check());

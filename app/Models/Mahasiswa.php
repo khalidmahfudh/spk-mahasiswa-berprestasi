@@ -11,6 +11,16 @@ class Mahasiswa extends Model
 {
     protected $table = "mahasiswa";
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'nama_mahasiswa',
+        'nim',
+    ];
+
     public function nilai_kriteria_mahasiswa(): HasMany
     {
         return $this->hasMany(

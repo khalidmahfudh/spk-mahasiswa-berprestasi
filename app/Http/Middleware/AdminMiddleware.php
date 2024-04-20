@@ -6,8 +6,9 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
-class CheckLoginStatus
+class AdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,18 +17,10 @@ class CheckLoginStatus
      */
     public function handle(Request $request, Closure $next): Response
     {
-        //  if (Auth::check()) {
-
-        //     if ($request->is('login', 'register')) {
-        //         return redirect()->back()->with('warning', 'Harap Logout Terlebih Dahulu');
-        //     }
-
-        //     return $next($request);
-
-        // } else {
-        //     return redirect('/login')->with('error', 'Harap Login Terlebih Dahulu');
-        // }
+        if (Auth::user()->isAdmin()) { 
             return $next($request);
+        }
 
+        return redirect()->back();
     }
 }
